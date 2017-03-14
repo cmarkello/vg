@@ -1,5 +1,8 @@
-bootstrap:docker
-FROM ubuntu:16.04
+Bootstrap: docker
+FROM: ubuntu:16.04
+
+%runscript
+    exec /app/bin/vg "$@"
 
 %post
 #MAINTAINER Erik Garrison <erik.garrison@gmail.com>
@@ -41,5 +44,3 @@ export INCLUDE_PATH /app/include:$INCLUDE_PATH
 
 cd /app && . ./source_me.sh && make && make test
 
-%runscript
-exec /app/bin/vg "$@"

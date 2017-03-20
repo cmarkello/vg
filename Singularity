@@ -6,6 +6,7 @@ FROM: ubuntu:16.04
 
 %post
     #MAINTAINER Erik Garrison <erik.garrison@gmail.com>
+
     
     # Make sure the en_US.UTF-8 locale exists, since we need it for tests
     locale-gen en_US en_US.UTF-8 && dpkg-reconfigure locales
